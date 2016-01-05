@@ -9,5 +9,8 @@
         "express": "3.x",
         "uinexpress": "*"
      },
-     "main": "app.js"
+	 "script" : {
+		"start" : "node app.js"
+	 }
+	 
 }
