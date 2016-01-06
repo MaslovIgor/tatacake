@@ -4,12 +4,17 @@ var app = express();
 app.configure(function() {
     app.engine('html', require('uinexpress').__express) // Используем функцию "template" библиотеки underscore для рендеринга
     app.set('view engine', 'html')
+	app.set('view options', { layout: false })
+	
     app.set('views', __dirname + "/tpl")
-    app.use('/images', express.static(__dirname + "/images"))     // Делаем файлы из папки images доступными на сайте
+	// static content for our site
+    app.use('/images', express.static(__dirname + "/images"))
+	app.use('/css', express.static(__dirname + "/css"))
+	app.use('/js', express.static(__dirname + "/js"))
 });
 
 app.get('/', function(req, res){
-    res.render('index.html');
+    res.sendfile(__dirname + "/tpl/index.html");
 });
 
 var port = process.env.PORT || 5000;       
