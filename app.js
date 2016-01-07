@@ -1,11 +1,14 @@
 var express = require('express');
 var app = express();
 
+function render(res, view)
+{
+	res.render(view, {ga_id : process.env.GAID || 'UA-00000000-0'})
+}
+
 app.configure(function() {
     app.engine('html', require('uinexpress').__express) // Используем функцию "template" библиотеки underscore для рендеринга
     app.set('view engine', 'html')
-	app.set('view options', { layout: false })
-	
     app.set('views', __dirname + "/tpl")
 	// static content for our site
     app.use('/images', express.static(__dirname + "/images"))
@@ -14,12 +17,11 @@ app.configure(function() {
 });
 
 app.get('/', function(req, res) {
-    res.sendfile(__dirname + "/tpl/index.html");
+    render(res, "index.html")
 });
 
 app.get('/save_email', function(req, res) {	
-	console.log("Email at " + req.query.email)
-    res.sendfile(__dirname + "/tpl/index.html")
+    render(res, "index.html")
 });
 
 var port = process.env.PORT || 5000       
