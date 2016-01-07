@@ -1,4 +1,4 @@
-var db = require ("./db");
+var db = require ("./db.js");
 
 var express = require('express');
 var app = express();
