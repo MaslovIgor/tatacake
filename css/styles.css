@@ -29,5 +29,8 @@ h1 {
 }
 
 .social-icons {
-	color : #333
+	font-size: 20px;
+	color : #333;
+	padding-left: 10px;
+	padding-right: 10px;
 }

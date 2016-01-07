@@ -13,10 +13,15 @@ app.configure(function() {
 	app.use('/js', express.static(__dirname + "/js"))
 });
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
     res.sendfile(__dirname + "/tpl/index.html");
 });
 
-var port = process.env.PORT || 5000;       
+app.get('/save_email', function(req, res) {	
+	console.log("Email at " + req.query.email)
+    res.sendfile(__dirname + "/tpl/index.html")
+});
+
+var port = process.env.PORT || 5000       
 app.listen(port)                           // Запускаем сервер на 5000 порту, если не указана переменная окружения "port" 
 console.log("Listening at " + port)        // Пишем в консоль, что запустились

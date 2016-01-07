@@ -11,6 +11,7 @@
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
 	<body>
+		<script src="js/custom.js"></script>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 panel panel-default text-center v-center">
@@ -18,7 +19,7 @@
 					<p>
 						Our site will come soon.
 					</p>	
-					<form class="margin-base-vertical">
+					<form name="emailform" class="margin-base-vertical" action="save_email" onsubmit="return validateEmail(document.emailform.email)">
 						<p class="input-group">
 							<span class="input-group-addon"><span class="icon-envelope"></span></span>
 							<input type="text" class="form-control input-lg" name="email" placeholder="Enter your email address"/>
@@ -30,9 +31,10 @@
 						</span>
 					</form>
 					<div class="margin-base-vertical">
-						<p class="text-center"><small>Find us in social network:</small></p>			
+						<p class="text-center"><small>Contact us:</small></p>			
 						<a href="https://vk.com/tatacake"><i class="icon-vk social-icons" color=></i></a> 
 						<a href="https://www.instagram.com/tata_cakes_"><i class="icon-instagram social-icons"></i></a>
+						<!--<a href="mailto:maslovata@gmail.com"><i class="icon-envelope social-icons"></i></a>-->
 					</div>
 				</div>
 			</div>
