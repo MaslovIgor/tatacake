@@ -6,7 +6,7 @@
         "npm": "1.1.x"
      },
      "dependencies": {
-        "express": "3.x",
+        "express": "4.x",
         "uinexpress": "*",
 		"mongoose": ">=4.1.11"
      },

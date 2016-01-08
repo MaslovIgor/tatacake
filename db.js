@@ -1,4 +1,4 @@
-var mongoose = require ("mongoose");
+var mongoose = require("mongoose");
 var mongouri = 
   process.env.MONGOLAB_URI || 
   process.env.MONGOHQ_URL || 
